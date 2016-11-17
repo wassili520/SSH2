@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance  http://www.springmodules.org/schema/cache/springmodules-cache.xsd http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd"    
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee      
+    		http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">    
+ 	<display-name>SSH2</display-name>
+ 	
+ 	<!-- struts.xml路径配置，若不配置需放到类路径下 -->
+	<init-param>
+		<param-name>config</param-name>
+		<param-value>../../resources/struts.xml</param-value>
+	</init-param>
+
+	<!-- Struts2框架的核心过滤器的配置 -->
+	<filter>
+		<filter-name>struts</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>struts</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring框架的核心监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		   	classpath:applicationContext.xml
+		</param-value>
+	</context-param>
+	
+	<welcome-file-list>
+		<welcome-file>Register.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

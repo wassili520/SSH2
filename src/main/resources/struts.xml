@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">  
+<struts>  
+    <!-- 用于CRUD Action的parent package -->  
+    <package name="ssh" extends="struts-default">  
+        <action name="register" class="com.ssh.action.RegisterAction">
+        	<result name="input">/Register.jsp</result>
+            <result name="success">/success.jsp</result>
+            <result name="error">/fail.jsp</result>
+        </action>
+    </package>
+   
+  
+</struts>  
